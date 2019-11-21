@@ -1,3 +1,5 @@
 # SwiftPatterns
 
-A description of this package.
+Design patterns implemented by swift
+
+- Strategy
