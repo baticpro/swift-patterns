@@ -31,6 +31,11 @@ final class SwiftPatternsTests: XCTestCase {
         
         XCTAssertEqual(iPhone.getName(), "this is iPhone with retina super display colored by newest green")
     }
+    
+    func testSimpleFactory() {
+        let normalProduct = SomeProductFactory.createSomeProduct(type: .normal)
+        XCTAssertEqual(normalProduct.getSomething(), "normal product")
+    }
 
     static var allTests = [
         ("testStrategy", testStrategy),
