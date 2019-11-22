@@ -23,9 +23,18 @@ final class SwiftPatternsTests: XCTestCase {
         XCTAssertEqual(developerIvan.getCurrentTask(), "let provide hotfix!")
         XCTAssertEqual(designerKatya.getCurrentTask(), "let provide hotfix!")
     }
+    
+    func testDecorator() {
+        var iPhone: AppleProduct = IPhone()
+        iPhone = SuperRetinaDisplay(dP: iPhone)
+        iPhone = NewestGreenColor(dP: iPhone)
+        
+        XCTAssertEqual(iPhone.getName(), "this is iPhone with retina super display colored by newest green")
+    }
 
     static var allTests = [
         ("testStrategy", testStrategy),
         ("testObserver", testObserver),
+        ("testDecorator", testDecorator),
     ]
 }
