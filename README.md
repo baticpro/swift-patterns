@@ -6,3 +6,4 @@ Design patterns implemented by swift
 - Observer
 - Decorator
 - Simple Factory
+- Factory Method

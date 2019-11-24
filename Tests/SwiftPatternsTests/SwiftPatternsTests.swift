@@ -36,6 +36,13 @@ final class SwiftPatternsTests: XCTestCase {
         let normalProduct = SomeProductFactory.createSomeProduct(type: .normal)
         XCTAssertEqual(normalProduct.getSomething(), "normal product")
     }
+    
+    func testFactoryMethod() {
+        let mobilePhoneFactory = MobilePhoneFactory()
+        let mobile = mobilePhoneFactory.produce()
+        
+        XCTAssertEqual(mobile.getName(), "this is a mobile phone")
+    }
 
     static var allTests = [
         ("testStrategy", testStrategy),
