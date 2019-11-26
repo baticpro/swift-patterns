@@ -43,6 +43,15 @@ final class SwiftPatternsTests: XCTestCase {
         
         XCTAssertEqual(mobile.getName(), "this is a mobile phone")
     }
+    
+    func testSingleton() {
+        let single = SomeSingleton.shared
+        single.someValue = 10
+        
+        SomeSingleton.shared.someValue += 20
+        
+        XCTAssertEqual(single.someValue, 30)
+    }
 
     static var allTests = [
         ("testStrategy", testStrategy),

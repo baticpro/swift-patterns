@@ -7,3 +7,4 @@ Design patterns implemented by swift
 - Decorator
 - Simple Factory
 - Factory Method
+- Singleton
