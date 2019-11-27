@@ -8,3 +8,4 @@ Design patterns implemented by swift
 - Simple Factory
 - Factory Method
 - Singleton
+- Abstract Factory

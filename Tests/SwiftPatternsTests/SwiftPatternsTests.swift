@@ -52,6 +52,16 @@ final class SwiftPatternsTests: XCTestCase {
         
         XCTAssertEqual(single.someValue, 30)
     }
+    
+    func testAbstractFactory() {
+        let cheapComputerFactory = CheapComputerFactory()
+        
+        let ram = cheapComputerFactory.produceRam()
+        let display = cheapComputerFactory.produceDisplay()
+        
+        XCTAssertEqual(ram.getSize(), "16GB")
+        XCTAssertEqual(display.getSize(), "1280x720")
+    }
 
     static var allTests = [
         ("testStrategy", testStrategy),
