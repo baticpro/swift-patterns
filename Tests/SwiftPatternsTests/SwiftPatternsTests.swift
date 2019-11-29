@@ -62,6 +62,20 @@ final class SwiftPatternsTests: XCTestCase {
         XCTAssertEqual(ram.getSize(), "16GB")
         XCTAssertEqual(display.getSize(), "1280x720")
     }
+    
+    func testCommand() {
+        let addCommand = AddLineCommand()
+        let hiCommand = AddHiCommand()
+
+        let textEditor = TextEditor()
+
+        textEditor.addCommand(command: addCommand)
+        textEditor.addCommand(command: hiCommand)
+
+        textEditor.exucteCommands()
+        
+        XCTAssertEqual(textEditor.getResut(), "\n - Hi")
+    }
 
     static var allTests = [
         ("testStrategy", testStrategy),
