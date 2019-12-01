@@ -76,6 +76,14 @@ final class SwiftPatternsTests: XCTestCase {
         
         XCTAssertEqual(textEditor.getResut(), "\n - Hi")
     }
+    
+    func testAdapter()
+    {
+        let cassetPlayer = OldCassetPlayer()
+        let adaptee = OldCassetAdapter(oldCasset: cassetPlayer)
+        
+        XCTAssertEqual(adaptee.playMusic(), "playing casset")
+    }
 
     static var allTests = [
         ("testStrategy", testStrategy),
