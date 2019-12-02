@@ -84,6 +84,12 @@ final class SwiftPatternsTests: XCTestCase {
         
         XCTAssertEqual(adaptee.playMusic(), "playing casset")
     }
+    
+    func testFacade()
+    {
+        let wm = WearMarket()
+        XCTAssertEqual(wm.buyWear(), "clothes, snakes, t-shirt")
+    }
 
     static var allTests = [
         ("testStrategy", testStrategy),
