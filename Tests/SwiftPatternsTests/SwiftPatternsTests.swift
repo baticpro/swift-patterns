@@ -90,6 +90,15 @@ final class SwiftPatternsTests: XCTestCase {
         let wm = WearMarket()
         XCTAssertEqual(wm.buyWear(), "clothes, snakes, t-shirt")
     }
+    
+    func testTemplateMethod()
+    {
+        let mobile = MobileSmartPhone()
+        let cell = CellPhone()
+        
+        XCTAssertEqual(mobile.processCall(), "unlocked by touchID, tapped to screen, tapped to green button")
+        XCTAssertEqual(cell.processCall(), "don't need unlock, rolling circle, waiting after input")
+    }
 
     static var allTests = [
         ("testStrategy", testStrategy),

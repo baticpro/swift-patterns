@@ -7,6 +7,7 @@ Design patterns implemented by swift
 - Decorator
 - Facade
 - Adapter
+- Template Method
 - Simple Factory
 - Factory Method
 - Singleton
