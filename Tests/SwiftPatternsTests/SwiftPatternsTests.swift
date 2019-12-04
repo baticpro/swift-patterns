@@ -99,6 +99,30 @@ final class SwiftPatternsTests: XCTestCase {
         XCTAssertEqual(mobile.processCall(), "unlocked by touchID, tapped to screen, tapped to green button")
         XCTAssertEqual(cell.processCall(), "don't need unlock, rolling circle, waiting after input")
     }
+    
+    func testIterator()
+    {
+        let playerA = FootballPlayer(name: "player A", isGoolKeeper: true)
+        let playerB = FootballPlayer(name: "player B", isGoolKeeper: false)
+        let playerC = FootballPlayer(name: "player C", isGoolKeeper: false)
+        let playerD = FootballPlayer(name: "player D", isGoolKeeper: true)
+        let playerF = FootballPlayer(name: "player F", isGoolKeeper: false)
+        let playerH = FootballPlayer(name: "player H", isGoolKeeper: false)
+
+        let team = FootballTeam()
+        team.addPlayer(player: playerA)
+        team.addPlayer(player: playerB)
+        team.addPlayer(player: playerC)
+        team.addPlayer(player: playerD)
+        team.addPlayer(player: playerF)
+        team.addPlayer(player: playerH)
+
+        let iterator = team.makeGoolkeepersIterator()
+        
+        XCTAssertEqual(iterator.next()?.name, "player A")
+        XCTAssertEqual(iterator.next()?.name, "player D")
+        XCTAssertEqual(iterator.next()?.name, nil)
+    }
 
     static var allTests = [
         ("testStrategy", testStrategy),

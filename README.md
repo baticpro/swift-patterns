@@ -9,6 +9,7 @@ Design patterns implemented by swift
 - Adapter
 - Template Method
 - Simple Factory
+- Iterator
 - Factory Method
 - Singleton
 - Abstract Factory
