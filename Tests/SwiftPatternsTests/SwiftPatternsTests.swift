@@ -123,6 +123,18 @@ final class SwiftPatternsTests: XCTestCase {
         XCTAssertEqual(iterator.next()?.name, "player D")
         XCTAssertEqual(iterator.next()?.name, nil)
     }
+    
+    func testComposite()
+    {
+        let parent = ParentCategory(deep: 0)
+        let child1 = ChildrenCategory(deep: 1)
+        let child2 = ChildrenCategory(deep: 2)
+
+        parent.addChildren(c: child1)
+        parent.addChildren(c: child2)
+
+        XCTAssertEqual(parent.printContents(), "category - 1 category - 2")
+    }
 
     static var allTests = [
         ("testStrategy", testStrategy),
