@@ -135,6 +135,18 @@ final class SwiftPatternsTests: XCTestCase {
 
         XCTAssertEqual(parent.printContents(), "category - 1 category - 2")
     }
+    
+    func testState()
+    {
+        let character = SomeCharacter()
+        character.performGo()
+        
+        character.performIdle()
+        XCTAssertEqual(character.state.toString(), "idle")
+        
+        character.performJump()
+        XCTAssertEqual(character.state.toString(), "jumping")
+    }
 
     static var allTests = [
         ("testStrategy", testStrategy),

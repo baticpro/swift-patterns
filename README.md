@@ -11,6 +11,7 @@ Design patterns implemented by swift
 - Simple Factory
 - Composite
 - Iterator
+- State
 - Factory Method
 - Singleton
 - Abstract Factory
