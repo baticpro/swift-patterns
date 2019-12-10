@@ -147,6 +147,15 @@ final class SwiftPatternsTests: XCTestCase {
         character.performJump()
         XCTAssertEqual(character.state.toString(), "jumping")
     }
+    
+    func testProxy() {
+        let user = Client(name: "vasya")
+        let server = ProxyServer()
+
+        XCTAssertEqual(server.grandAccess(client: user), "user vasya not logged")
+        server.authenticate(client: user)
+        XCTAssertEqual(server.grandAccess(client: user), "for user vasya access is granted")
+    }
 
     static var allTests = [
         ("testStrategy", testStrategy),

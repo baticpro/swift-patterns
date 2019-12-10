@@ -9,6 +9,7 @@ Design patterns implemented by swift
 - Adapter
 - Template Method
 - Simple Factory
+- Proxy
 - Composite
 - Iterator
 - State
